@@ -38,8 +38,8 @@ export default function Navbar() {
     >
       <div className="navbar__inner container">
         <a href="#hero" className="navbar__brand" aria-label="Harmonize - início">
-          <img src="/images/logo.png" alt="Harmonize" className="navbar__logo" />
-          <span className="navbar__wordmark">HARMONIZE</span>
+          <img src="/images/logo.png" alt="" className="navbar__logo" />
+          <span className="navbar__wordmark">armonize</span>
         </a>
 
         <ul className="navbar__links">

@@ -15,15 +15,76 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* ---- Textura de fundo animada (fixa atrás de tudo) ---- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-bg);
+  overflow: hidden;
+  pointer-events: none;
+}
+/* ripado vertical sutil que desliza lentamente */
+.site-bg::before {
+  content: '';
+  position: absolute;
+  inset: -25%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(196, 168, 130, 0.06) 0,
+    rgba(196, 168, 130, 0.06) 1px,
+    transparent 1px,
+    transparent 64px
+  );
+  animation: bg-ripado 50s linear infinite;
+}
+/* manchas douradas suaves que respiram e flutuam */
+.site-bg::after {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background-image: radial-gradient(
+      circle at 18% 28%,
+      rgba(196, 168, 130, 0.22),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(107, 74, 42, 0.12),
+      transparent 46%
+    ),
+    radial-gradient(
+      circle at 60% 12%,
+      rgba(196, 168, 130, 0.14),
+      transparent 38%
+    );
+  animation: bg-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes bg-ripado {
+  to {
+    transform: translateX(64px);
+  }
+}
+@keyframes bg-drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(46px, -34px) scale(1.12);
+  }
 }
 
 h1,
