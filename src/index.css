@@ -14,8 +14,22 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background-color: var(--color-bg);
+}
+
+/* ---- Lenis (scroll suave) ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {

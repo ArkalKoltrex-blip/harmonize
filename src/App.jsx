@@ -6,9 +6,12 @@ import About from './components/About.jsx'
 import Showcase from './components/Showcase.jsx'
 import Suppliers from './components/Suppliers.jsx'
 import Footer from './components/Footer.jsx'
+import useLenis from './hooks/useLenis.js'
 import './components/components.css'
 
 export default function App() {
+  useLenis()
+
   return (
     <>
       <div className="site-bg" aria-hidden="true" />
