@@ -1,15 +1,26 @@
-import { motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP =
   'https://wa.me/557732028028?text=Ol%C3%A1%20gostaria%20de%20ajuda%20para%20escolher%20um%20acabamento'
 
 export default function Quiz() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-12%', '12%'])
+
   return (
-    <section id="questionario" className="quiz">
-      <div
+    <section id="questionario" className="quiz" ref={ref}>
+      <motion.div
         className="quiz__bg"
-        style={{ backgroundImage: 'url(/images/ambiente-interno.png)' }}
+        style={{
+          backgroundImage: 'url(/images/ambiente-interno.png)',
+          y: bgY,
+        }}
         aria-hidden="true"
       />
       <div className="quiz__overlay" aria-hidden="true" />

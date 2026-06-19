@@ -1,16 +1,25 @@
-import { motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
+import CountUp from './CountUp.jsx'
 
 const ease = [0.22, 1, 0.36, 1]
 
 const stats = [
-  { num: '+500', label: 'projetos entregues' },
-  { num: '2', label: 'regiões atendidas' },
-  { num: '4', label: 'linhas de acabamento' },
+  { value: 500, prefix: '+', suffix: '', label: 'projetos entregues' },
+  { value: 2, prefix: '', suffix: '', label: 'regiões atendidas' },
+  { value: 4, prefix: '', suffix: '', label: 'linhas de acabamento' },
 ]
 
 export default function About() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const imgY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
+
   return (
-    <section id="quem-somos" className="about">
+    <section id="quem-somos" className="about" ref={ref}>
       <div className="container about__grid">
         <motion.div
           className="about__media"
@@ -20,9 +29,10 @@ export default function About() {
           transition={{ duration: 0.8, ease }}
         >
           <div className="about__frame">
-            <img
+            <motion.img
               src="/images/ambiente-externo.jpg"
               alt="Painel ripado externo em ambiente contemporâneo"
+              style={{ y: imgY, scale: 1.12 }}
             />
           </div>
         </motion.div>
@@ -55,7 +65,9 @@ export default function About() {
           <div className="about__stats">
             {stats.map((s) => (
               <div key={s.label} className="about__stat">
-                <span className="about__stat-num">{s.num}</span>
+                <span className="about__stat-num">
+                  <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />
+                </span>
                 <span className="about__stat-label">{s.label}</span>
               </div>
             ))}

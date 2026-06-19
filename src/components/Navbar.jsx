@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'motion/react'
+import { motion, useScroll, useSpring } from 'motion/react'
 
 const links = [
   { label: 'Início', href: '#hero' },
@@ -15,6 +15,13 @@ const WHATSAPP =
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -61,6 +68,10 @@ export default function Navbar() {
           <span /><span /><span />
         </button>
       </div>
+
+      {/* barra de progresso de leitura (ref. Zetta) */}
+      <motion.div className="navbar__progress" style={{ scaleX: progress }} />
+
 
       {open && (
         <motion.ul
