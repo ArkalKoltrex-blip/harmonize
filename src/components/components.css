@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 104px;
+  height: 124px;
 }
 .navbar__brand {
   display: flex;
@@ -30,20 +30,20 @@
   gap: 0; /* logo H encosta no wordmark para formar "Harmonize" */
 }
 .navbar__logo {
-  height: 64px;
+  height: 92px;
   width: auto;
   /* logo é H preto sobre fundo branco — multiply remove o fundo no creme */
   mix-blend-mode: multiply;
-  margin-right: -2px;
+  margin-right: -4px;
 }
 .navbar__wordmark {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.85rem;
-  letter-spacing: 0.01em;
+  font-size: 2.5rem;
+  letter-spacing: 0.005em;
   color: var(--color-text);
   /* alinha a base do texto com a haste do H da logo */
-  transform: translateY(2px);
+  transform: translateY(3px);
 }
 .navbar__links {
   display: flex;
@@ -121,7 +121,7 @@
 
 /* ---------- HERO (banner estilo PiFi) ---------- */
 .hero {
-  padding-top: 140px;
+  padding-top: 164px;
   padding-bottom: var(--space-section);
   overflow: hidden;
 }
@@ -726,6 +726,18 @@
   }
   .navbar__burger {
     display: flex;
+  }
+  .navbar__inner {
+    height: 92px;
+  }
+  .navbar__logo {
+    height: 66px;
+  }
+  .navbar__wordmark {
+    font-size: 1.9rem;
+  }
+  .hero {
+    padding-top: 124px;
   }
   .filters {
     flex-direction: column;
