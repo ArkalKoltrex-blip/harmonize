@@ -1,0 +1,59 @@
+/* ============================================================
+   Harmonize — Design Tokens
+   Gerado a partir do DESIGN.md. Importar antes de qualquer
+   outro CSS. Não usar valores hardcoded fora destes tokens.
+   ============================================================ */
+
+:root {
+  /* ---- Cores ---- */
+  --color-primary: #6B4A2A;      /* Espresso  — CTAs, links, accent */
+  --color-secondary: #C4A882;    /* Areia Dourada — destaques, hover */
+  --color-bg: #F5F0E8;           /* Creme — base das páginas */
+  --color-surface: #EDE8DC;      /* Bege — cards, seções alternadas */
+  --color-text: #2C1F14;         /* Mogno — títulos, texto forte */
+  --color-muted: #8C7B6B;        /* Taupe — corpo de texto, captions */
+  --color-accent-dark: #2E2E30;  /* Antracite — footer, contraste */
+
+  /* ---- Navbar de vidro (glassmorphism bege) ---- */
+  --glass-bg: rgba(245, 240, 232, 0.55);
+  --glass-blur: blur(24px) saturate(180%);
+  --glass-border: 1px solid rgba(196, 168, 130, 0.25);
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* ---- Raios / espaçamentos ---- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-hero: 32px;          /* enquadramento arredondado da hero */
+
+  --space-section: 6rem;        /* espaçamento generoso entre seções (ref. Zetta) */
+
+  /* ---- Sombras suaves ---- */
+  --shadow-card: 0 8px 30px rgba(44, 31, 20, 0.08);
+  --shadow-card-hover: 0 16px 40px rgba(44, 31, 20, 0.14);
+}
+
+/* Acessibilidade: reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

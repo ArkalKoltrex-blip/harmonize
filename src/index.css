@@ -1,0 +1,206 @@
+@import '../styles/tokens.css';
+
+/* ============================================================
+   Harmonize — Estilos globais
+   Caráter da marca: ripado vertical, madeira quente, leveza.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* palavra de destaque — cor da marca (Syne é geométrico, sem itálico) */
+.accent-italic {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+p {
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---- Seções ---- */
+section {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--color-secondary);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, var(--text-5xl));
+  margin-top: 1rem;
+  max-width: 18ch;
+}
+
+.section-lead {
+  font-size: var(--text-lg);
+  max-width: 52ch;
+  margin-top: 1.25rem;
+}
+
+/* ---- Botões ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  font-size: var(--text-base);
+  font-weight: 600;
+  transition: transform 0.25s ease, background-color 0.25s ease,
+    color 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 10px 24px rgba(107, 74, 42, 0.28);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #543a21;
+  box-shadow: 0 16px 32px rgba(107, 74, 42, 0.34);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid rgba(107, 74, 42, 0.35);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  background: rgba(196, 168, 130, 0.16);
+}
+
+/* botões para uso sobre imagem escura (hero banner) */
+.btn-light {
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+.btn-light:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+.btn-ghost {
+  background: rgba(245, 240, 232, 0.12);
+  color: var(--color-bg);
+  border: 1.5px solid rgba(245, 240, 232, 0.55);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(245, 240, 232, 0.22);
+  border-color: var(--color-bg);
+}
+
+/* destaque dourado para texto sobre fundo escuro */
+.accent-soft {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* ---- Textura ripada gerada em CSS (fallback p/ produtos sem foto) ----
+   O próprio DNA da marca é o ripado vertical. */
+.ripado-texture {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--rip-dark, #c9a876) 0px,
+    var(--rip-dark, #c9a876) 2px,
+    var(--rip-light, #ddbf95) 2px,
+    var(--rip-light, #ddbf95) 14px,
+    var(--rip-dark, #c9a876) 14px,
+    var(--rip-dark, #c9a876) 16px
+  );
+}
+
+/* ---- Acessibilidade: foco visível ---- */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  section {
+    padding-block: 4rem;
+  }
+}
