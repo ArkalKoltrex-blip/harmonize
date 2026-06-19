@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { asset } from '../utils/asset.js'
 
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP =
@@ -18,7 +19,7 @@ export default function Quiz() {
       <motion.div
         className="quiz__bg"
         style={{
-          backgroundImage: 'url(/images/ambiente-interno.png)',
+          backgroundImage: `url(${asset('images/ambiente-interno.png')})`,
           y: bgY,
         }}
         aria-hidden="true"

@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset.js'
+
 const WHATSAPP =
   'https://wa.me/557732028028?text=Ol%C3%A1%20gostaria%20de%20fazer%20um%20or%C3%A7amento'
 const INSTAGRAM = 'https://instagram.com/harmonizerevestdecor'
@@ -7,7 +9,7 @@ export default function Footer() {
     <footer id="contato" className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <img src="/images/logo.png" alt="Harmonize" className="footer__logo" />
+          <img src={asset('images/logo.png')} alt="Harmonize" className="footer__logo" />
           <p className="footer__tagline">
             Acabamento e sofisticação único na região.
           </p>

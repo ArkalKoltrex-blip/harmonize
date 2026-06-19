@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import CountUp from './CountUp.jsx'
+import { asset } from '../utils/asset.js'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -30,7 +31,7 @@ export default function About() {
         >
           <div className="about__frame">
             <motion.img
-              src="/images/ambiente-externo.jpg"
+              src={asset('images/ambiente-externo.jpg')}
               alt="Painel ripado externo em ambiente contemporâneo"
               style={{ y: imgY, scale: 1.12 }}
             />

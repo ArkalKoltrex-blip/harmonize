@@ -8,7 +8,7 @@ export const products = [
     desc: 'Madeira quente de tom âmbar, ideal para fachadas e painéis de destaque.',
     price: 129,
     colorGroup: 'Madeira',
-    image: '/images/produto-caramelo.jpg',
+    image: 'images/produto-caramelo.jpg',
     rip: null,
   },
   {
@@ -35,7 +35,7 @@ export const products = [
     desc: 'Ardósia escura de presença marcante para ambientes contemporâneos.',
     price: 149,
     colorGroup: 'Escuro',
-    image: '/images/produto-antracite.webp',
+    image: 'images/produto-antracite.webp',
     rip: null,
   },
 ]

@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { asset } from '../utils/asset.js'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -30,7 +31,7 @@ export default function Showcase() {
           style={{ width, height, borderRadius: radius }}
         >
           <motion.img
-            src="/images/ambiente-interno.png"
+            src={asset('images/ambiente-interno.png')}
             alt="Ambiente interno com revestimento ripado e piso Harmonize"
             style={{ scale: imgScale }}
           />

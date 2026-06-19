@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { asset } from '../utils/asset.js'
 
 const WHATSAPP =
   'https://wa.me/557732028028?text=Ol%C3%A1%20gostaria%20de%20fazer%20um%20or%C3%A7amento'
@@ -39,7 +40,7 @@ export default function Hero() {
         >
           <motion.img
             className="hero__img"
-            src="/images/hero.jpg"
+            src={asset('images/hero.jpg')}
             alt="Fachada com ripado de madeira e vegetação"
             style={{ y: imgY, scale: imgScale }}
           />

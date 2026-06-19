@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useScroll, useSpring } from 'motion/react'
+import { asset } from '../utils/asset.js'
 
 const links = [
   { label: 'Início', href: '#hero' },
@@ -38,7 +39,7 @@ export default function Navbar() {
     >
       <div className="navbar__inner container">
         <a href="#hero" className="navbar__brand" aria-label="Harmonize - início">
-          <img src="/images/logo.png" alt="" className="navbar__logo" />
+          <img src={asset('images/logo.png')} alt="" className="navbar__logo" />
           <span className="navbar__wordmark">armonize</span>
         </a>
 

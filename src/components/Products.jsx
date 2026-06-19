@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { products, colorGroups } from '../data/products.js'
+import { asset } from '../utils/asset.js'
 
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP = (name) =>
@@ -93,7 +94,7 @@ export default function Products() {
               >
                 <div className="card__media">
                   {p.image ? (
-                    <img src={p.image} alt={p.name} loading="lazy" />
+                    <img src={asset(p.image)} alt={p.name} loading="lazy" />
                   ) : (
                     <div
                       className="card__texture ripado-texture"
