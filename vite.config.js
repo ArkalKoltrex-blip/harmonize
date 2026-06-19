@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  // necessário para o GitHub Pages servir em /harmonize/
+  base: '/harmonize/',
   server: {
     open: true,
   },
